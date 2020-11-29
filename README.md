@@ -1,4 +1,4 @@
-# ctrlfrything
+# CtrlFrything
 Search your current Windows Explorer folder with voidtools' Everything via Ctrl+F
 
 Long have I dreamed of completely replacing Windows Search Indexer (which is rather slow and useless) with [voidtools' Everything](https://voidtools.com/downloads/).
