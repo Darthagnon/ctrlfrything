@@ -23,8 +23,9 @@ If( FileExist( "CtrlFrything.ico" ) )
 	Menu, Tray, Icon, CtrlFrything.ico
 
 Menu Tray, Tip, Search Everything via Ctrl+F
-Menu Tray, NoStandard
-Menu Tray, Add, E&xit CtrlFrything, Exit
+; Standard AHK tray menu is actually useful
+; Menu Tray, NoStandard
+; Menu Tray, Add, E&xit CtrlFrything, Exit
 
 
 ; Setting: Depending on INI, set global hotkey Win+S (Windows Search) to open Everything instead.
