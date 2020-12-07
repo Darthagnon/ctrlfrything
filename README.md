@@ -15,3 +15,10 @@ Using the above tweaks, you can pretty much [disable Windows Search Indexer](htt
 - Icon for compiled EXE that looks like the official Everything icon (same colour scheme).
 - Custom context menu for compiled EXE (removed default AutoHotKey junk that we don't need)
 - Compiled EXE has been tested to take up no more RAM than running the raw AHK script, so no need to worry about that. 2-3MB RAM
+- Tray menu with "Pause" option
+
+## References
+- [How to implement checkmarks on tray menu items](https://jacks-autohotkey-blog.com/2017/02/21/change-script-features-on-the-fly-with-the-windows-system-tray-icon-context-menu-autohotkey-tip/#more-27655)
+- [Eclipse Encryption](https://github.com/DannyBen/eclipse), a good AHK program with good structure, tray menu, GUI; all round good example
+- [Original source AHK script](https://www.voidtools.com/forum/viewtopic.php?t=5928#p17399)
+- [My feature request for this to be implemented in vanilla Everything](https://www.voidtools.com/forum/viewtopic.php?f=5&t=9055&p=33607#p33607)

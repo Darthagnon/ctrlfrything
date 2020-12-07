@@ -17,15 +17,18 @@ IfNotExist CtrlFrything.ini
 IniRead, EverythingPath, CtrlFrything.ini, Config, EverythingPath, C:\Program Files\Everything\Everything.exe
 IniRead, ReplaceWinS, CtrlFrything.ini, Config, ReplaceWinS, 0
 
+
 ; Custom Tray Menu
 If( FileExist( "CtrlFrything.ico" ) )
-
-	Menu, Tray, Icon, CtrlFrything.ico
+{
+	Menu, Tray, Icon, CtrlFrything.ico,, 1 ;Freeze tray icon, so it doesn't change to AHK "S"(suspend) or "H" (paused). Custom pause icon unavailable?
+}
 
 Menu Tray, Tip, Search Everything via Ctrl+F
-; Standard AHK tray menu is actually useful
-; Menu Tray, NoStandard
-; Menu Tray, Add, E&xit CtrlFrything, Exit
+Menu Tray, NoStandard ; No standard AHK tray context menu
+Menu Tray, Add, Commandeer Win+&S, ComWS ; Checkbox for INI option to Search Everything via Win+S
+Menu Tray, Add, &Pause Hotkeys, MenuSuspend ;AHK "Suspend" does what I expect "Pause" to do.
+Menu Tray, Add, E&xit CtrlFrything, Exit
 
 
 ; Setting: Depending on INI, set global hotkey Win+S (Windows Search) to open Everything instead.
@@ -56,8 +59,22 @@ Return
 Return
 #If   ; end contextual hotkey
 
+ComWs:
+ReplaceWinS := !ReplaceWinS ; flip INI flag
+IniWrite %ReplaceWinS%, CtrlFrything.ini, Config, ReplaceWinS
+Reload ; Checkmarks are not persistent across reloads
+Sleep 1000
+Return
+
+MenuSuspend: ; Place Suspend option at the end so script doesn't start suspended.
+Menu, Tray, ToggleCheck, &Pause Hotkeys ; toggle checkmark next to "Pause" in tray menu
+Ticked := !Ticked ; flip temp variable flag
+Suspend, Toggle ; Main purpose of this subroutine
+Return
+
 Exit:
     ExitApp
 Return
 
-
+; Debug emergency quit red button
+; Esc::ExitApp  ; Exit script with Escape key
