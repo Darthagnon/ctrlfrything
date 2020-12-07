@@ -22,3 +22,5 @@ Using the above tweaks, you can pretty much [disable Windows Search Indexer](htt
 - [Eclipse Encryption](https://github.com/DannyBen/eclipse), a good AHK program with good structure, tray menu, GUI; all round good example
 - [Original source AHK script](https://www.voidtools.com/forum/viewtopic.php?t=5928#p17399)
 - [My feature request for this to be implemented in vanilla Everything](https://www.voidtools.com/forum/viewtopic.php?f=5&t=9055&p=33607#p33607)
+- [Major fix by u/G1ZM02K](https://www.reddit.com/r/AutoHotkey/comments/k8hfu2/how_to_make_tray_checkmarks_persist_across_script/) for checkboxes in the tray context menu [here](https://p.ahkscript.org/?p=ce79ba69)
+- [Start AHK script with Windows](https://www.autohotkey.com/boards/viewtopic.php?t=38392&p=176247)
